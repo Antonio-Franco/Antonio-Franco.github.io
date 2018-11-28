@@ -1,0 +1,161 @@
+#your-inner-egg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 64px;
+  width: 100%;
+}
+
+#top {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 64px;
+  margin-bottom: 0px;
+  height: 400px;
+  width: 100%;
+  z-index: 1;
+}
+
+#top div {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 64px;
+  padding-left: 96px;
+}
+
+#top #img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#top div img {
+  bottom: 128px;
+  transition: 500ms;
+  opacity: 0;
+  height: 0px;
+}
+
+#top div img:hover {
+  animation: spin 1s ease-out 0s 1;
+}
+
+#top div h1 {
+  font-size: 128px;
+  position: relative;
+}
+
+#top div h2 {
+  font-size: 72px;
+  position: relative;
+}
+
+#background {
+  height: 512px;
+}
+
+#background img {
+  position: relative;
+  bottom: 256px;
+  right: 400px;
+  opacity: 0.5;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#middle {
+  /*margin-top: 200px;*/
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f7ee;
+  box-shadow: 0px 1px 4px rgb(51, 51, 51);
+  z-index: 1;
+  opacity: 0;
+}
+
+#middle div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+}
+
+#middle h2 {
+  font-size: 96px;
+  margin: 36px;
+}
+
+#middle p {
+  font-size: 48px;
+  margin: 72px 128px;
+}
+
+#middle img {
+  margin: 0px 128px;
+}
+
+#bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#bottom .row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  opacity: 0;
+  background-color: #eee0cb;
+  position: relative;
+  top: 1px;
+  border-radius: 24px;
+  width: 40%;
+  margin: 2% 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2% 5%;
+  font-size: 48px;
+  text-align: center;
+  box-shadow: 0px 1px 4px rgb(51, 51, 51);
+  cursor: pointer;
+}
+
+.box img:not(.pic) {
+  height: 48px;
+  transition: 500ms;
+  position: absolute;
+}
+
+.pic {
+  display: none;
+  border-radius: 10px;
+}
+
+.flip {
+  transform: rotate(180deg);
+  transition: 500ms;
+}
