@@ -136,13 +136,13 @@
   position: relative;
   top: 1px;
   border-radius: 24px;
-  width: 250px;
-  margin: 2% 5%;
+  width: 350px;
+  margin: 2% 2%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2% 5%;
+  padding: 24px 24px;
   font-size: 48px;
   text-align: center;
   box-shadow: 0px 1px 4px rgb(51, 51, 51);
@@ -152,7 +152,7 @@
 
 .box:hover {
   background-color: #f4ecdf;
-  transform: scale(1.02);
+  transform: scale(1.02) translateY(75px);
   transition: 500ms;
 }
 
@@ -163,6 +163,11 @@
 .box .pic {
   margin-top: 16px;
   height: 200px;
+}
+
+.translate {
+  transform: translateY(75px);
+  transition: 500ms;
 }
 
 .pic {

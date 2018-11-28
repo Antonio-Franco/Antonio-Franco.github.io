@@ -23,16 +23,54 @@ $(document).ready(function() {
     .delay(2500)
     .animate({ opacity: "1" }, 1000);
   // fade in when scrolling
+  var scrollTimer,
+    lastScrollFireTime = 0;
+
+  $(window).on("scroll", function() {
+    var minScrollTime = 250;
+    var now = new Date().getTime();
+
+    function processScroll() {
+      $(".box").each(function(i) {
+        var bottom_of_object = $(this).position().top + $(this).outerHeight();
+        var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+        if (bottom_of_window > bottom_of_object) {
+          $(this)
+            .stop(true, true)
+            .animate({ opacity: "1" }, 100);
+          $(this).addClass("translate");
+        }
+      });
+    }
+
+    if (!scrollTimer) {
+      if (now - lastScrollFireTime > 3 * minScrollTime) {
+        processScroll(); // fire immediately on first scroll
+        lastScrollFireTime = now;
+      }
+      scrollTimer = setTimeout(function() {
+        scrollTimer = null;
+        lastScrollFireTime = new Date().getTime();
+        processScroll();
+      }, minScrollTime);
+    }
+  });
+
+  /*
   $(window).scroll(function() {
     $(".box").each(function(i) {
       var bottom_of_object = $(this).position().top + $(this).outerHeight();
       var bottom_of_window = $(window).scrollTop() + $(window).height();
 
       if (bottom_of_window > bottom_of_object) {
-        $(this).animate({ opacity: "1", top: "50px" }, 500);
+        $(this)
+          .stop(true, false)
+          .animate({ opacity: "1", top: "50px" }, 100);
       }
     });
   });
+  */
   // mouse hover
   $("#topimg").mouseover(function(event) {
     $(this).toggleClass("rotate");
