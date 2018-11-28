@@ -1,6 +1,8 @@
 @font-face {
   font-family: "Sile";
-  src: url("assets/fonts/Sile.ttf");
+  src: url("fonts/Sile.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 h1,
