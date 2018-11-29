@@ -20,7 +20,7 @@ $(document).ready(function() {
     .delay(500)
     .animate({ height: "500px" }, 1000);
   $("#middle")
-    .delay(2500)
+    .delay(0)
     .animate({ opacity: "1" }, 1000);
   // fade in when scrolling
   var scrollTimer,
@@ -56,21 +56,6 @@ $(document).ready(function() {
       }, minScrollTime);
     }
   });
-
-  /*
-  $(window).scroll(function() {
-    $(".box").each(function(i) {
-      var bottom_of_object = $(this).position().top + $(this).outerHeight();
-      var bottom_of_window = $(window).scrollTop() + $(window).height();
-
-      if (bottom_of_window > bottom_of_object) {
-        $(this)
-          .stop(true, false)
-          .animate({ opacity: "1", top: "50px" }, 100);
-      }
-    });
-  });
-  */
   // mouse hover
   $("#topimg").mouseover(function(event) {
     $(this).toggleClass("rotate");
@@ -97,34 +82,25 @@ $(document).ready(function() {
         .toggleClass("flip unflip");
     }
   });
-  /*
-  function loop() {
-    console.log("arrow");
-    $(".arrow")
-      .animate({ marginTop: "-= 10px" }, 300)
-      .animate({ marginTop: "+= 10px" }, 300);
-    delay(600).loop();
-  }
-  
-  function bounce(ele, times, distance, speed) {
-    for (i = 0; i < times; i++) {
-      console.log(i);
-      ele
-        .animate(
-          {
-            marginTop: "-=" + distance
-          },
-          speed
-        )
-        .animate(
-          {
-            marginTop: "+=" + distance
-          },
-          speed
-        );
+
+  // smooth scroll effct
+  function offsetAnchor() {
+    if (location.hash.length !== 0) {
+      /*window.scrollTo(window.scrollX, window.scrollY - 100);*/
+      window.scrollTo({ top: window.scrollY - 64, behavior: "smooth" });
     }
   }
 
-  bounce($(".arrow"), 10, "20px", 400);
-  */
+  // code credit to "kind user" on stack overflow
+  // Captures click events of all <a> elements with href starting with #
+  $(document).on("click", 'a[href^="#"]', function(event) {
+    // Click events are captured before hashchanges. Timeout
+    // causes offsetAnchor to be called after the page jump.
+    window.setTimeout(function() {
+      offsetAnchor();
+    }, 0);
+  });
+
+  // Set the offset when entering page with hash present in the url
+  window.setTimeout(offsetAnchor, 0);
 });
