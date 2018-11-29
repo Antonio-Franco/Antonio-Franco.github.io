@@ -26,6 +26,7 @@ $(document).ready(function() {
   var scrollTimer,
     lastScrollFireTime = 0;
 
+  // delayed scroll effect from stack overflow
   $(window).on("scroll", function() {
     var minScrollTime = 250;
     var now = new Date().getTime();

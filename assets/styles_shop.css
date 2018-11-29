@@ -1,0 +1,92 @@
+#shop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 64px;
+  width: 100%;
+}
+
+#top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 64px;
+  margin-bottom: 0px;
+  height: 400px;
+  width: 100%;
+  z-index: 1;
+}
+
+#top div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 64px;
+  padding-top: 128px;
+  height: 400px;
+}
+
+#top img {
+  height: 400px;
+  display: none;
+}
+
+#top h1 {
+  font-size: 128px;
+  position: relative;
+}
+
+#top h2 {
+  font-size: 64px;
+  display: none;
+}
+
+#middle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 160px;
+  margin-bottom: 32px;
+}
+
+#middle a {
+  margin: 32px;
+}
+
+.item {
+  height: 480px;
+  width: 320px;
+  background-color: #f0f7ee;
+  border-radius: 16px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: center;
+  box-shadow: 1px 1px 4px rgb(51, 51, 51);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transition: 250ms;
+}
+
+.item:hover {
+  transition: 250ms;
+  transform: scale(1.05);
+}
+
+.item h3 {
+  font-size: 48px;
+}
+
+.item p {
+  font-size: 36px;
+}
+
+.item img {
+  height: 250px;
+  border-radius: 128px;
+}

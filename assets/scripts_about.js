@@ -15,10 +15,10 @@ $(document).ready(function() {
     .delay(750)
     .animate({ opacity: "1" }, 500);
   $("#antonio-b")
-    .delay(750)
+    .delay(1000)
     .animate({ opacity: "1" }, 500);
   $("#egg-b")
-    .delay(750)
+    .delay(1250)
     .animate({ opacity: "1" }, 500);
 
   // mouse hover
