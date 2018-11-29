@@ -96,3 +96,10 @@ header a:hover {
 #right h1 {
   margin: auto 24px;
 }
+
+#footer {
+  transform: translateY(80px);
+  text-align: center;
+  font-size: 32px;
+  margin: 32px;
+}
