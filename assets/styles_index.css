@@ -31,10 +31,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: translate(-50px, 50px);
 }
 
 #top div img {
-  bottom: 128px;
   transition: 500ms;
   opacity: 0;
   height: 0px;

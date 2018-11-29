@@ -51,7 +51,6 @@ $(document).ready(function() {
   // smooth scroll effct
 
   $(".button").on("click", function(event) {
-    console.log("test");
     $("html, body")
       .stop()
       .animate(

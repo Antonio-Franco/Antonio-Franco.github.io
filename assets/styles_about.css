@@ -90,7 +90,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 16px 32px 64px;
+  margin: 64px;
 }
 
 #middle h2,
@@ -98,7 +98,7 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   text-align: center;
-  margin: 32px;
+  margin: 24px;
 }
 
 #middle p {
@@ -116,4 +116,7 @@
   border-radius: 8px;
   z-index: 1;
   display: none;
+  position: relative;
+  top: 0px;
+  left: 0px;
 }
