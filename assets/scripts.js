@@ -99,25 +99,4 @@ $(document).ready(function() {
         );
     }
   });
-
-  /*
-  function offsetAnchor() {
-    if (location.hash.length !== 0) {
-      window.scrollTo({ top: window.scrollY - 64, behavior: "smooth" });
-    }
-  }
-
-  // code credit to "kind user" on stack overflow
-  // Captures click events of all <a> elements with href starting with #
-  $(document).on("click", 'a[href^="#"]', function(event) {
-    // Click events are captured before hashchanges. Timeout
-    // causes offsetAnchor to be called after the page jump.
-    window.setTimeout(function() {
-      offsetAnchor();
-    }, 0);
-  });
-
-  // Set the offset when entering page with hash present in the url
-  window.setTimeout(offsetAnchor, 0);
-  */
 });
