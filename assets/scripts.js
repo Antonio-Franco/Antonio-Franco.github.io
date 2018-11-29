@@ -84,9 +84,25 @@ $(document).ready(function() {
   });
 
   // smooth scroll effct
+
+  $('a[href^="#"]').on("click", function(event) {
+    var target = $(this.getAttribute("href"));
+    if (target.length) {
+      event.preventDefault();
+      $("html, body")
+        .stop()
+        .animate(
+          {
+            scrollTop: target.offset().top - 64
+          },
+          500
+        );
+    }
+  });
+
+  /*
   function offsetAnchor() {
     if (location.hash.length !== 0) {
-      /*window.scrollTo(window.scrollX, window.scrollY - 100);*/
       window.scrollTo({ top: window.scrollY - 64, behavior: "smooth" });
     }
   }
@@ -103,4 +119,5 @@ $(document).ready(function() {
 
   // Set the offset when entering page with hash present in the url
   window.setTimeout(offsetAnchor, 0);
+  */
 });
